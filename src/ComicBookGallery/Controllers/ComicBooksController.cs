@@ -2,6 +2,7 @@
 using ComicBookGallery.Models;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -30,6 +31,10 @@ namespace ComicBookGallery.Controllers
             {
                 return HttpNotFound();
             }
+
+            string twitterAccount = ConfigurationManager.AppSettings["TwitterAccount"];
+            ViewBag.TwitterAccount = twitterAccount;
+
             var comicBook = _comicBookRepository.GetComicBook((int)id);
 
             return View(comicBook);
