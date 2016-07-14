@@ -35,7 +35,8 @@
     {
         <div class="backbar">
             <div class="container">
-                @Html.ActionLink("Return to List", "Index", null, new { @class = "btn btn-default" })
+                <a class="btn btn-default" onclick="goBack()">Return to List</a>
+                @*@Html.ActionLink("Return to List", "Index", null, new { @class = "btn btn-default" })*@
             </div>
         </div>
     }
@@ -50,5 +51,10 @@
 
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
+    <script>
+        function goBack() {
+            window.history.back()
+        }
+    </script>
 </body>
 </html>
